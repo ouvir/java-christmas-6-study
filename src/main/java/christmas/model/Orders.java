@@ -17,5 +17,12 @@ public class Orders {
         this.drinks.addAll(drinks);
     }
 
-
+    public List<Order> getAllMenu() {
+        List<Order> allMenu = new ArrayList<>();
+        allMenu.addAll(appetizers);
+        allMenu.addAll(mains);
+        allMenu.addAll(desserts);
+        allMenu.addAll(drinks);
+        return allMenu;
+    }
 }

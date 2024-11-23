@@ -1,5 +1,6 @@
 package christmas.model;
 
+import christmas.dto.OrderDTO;
 import christmas.utils.Parser;
 
 import java.util.List;
@@ -26,5 +27,9 @@ public class Order {
 
     public void setCount(int count) {
         this.count = count;
+    }
+
+    public OrderDTO convertToDTO() {
+        return new OrderDTO(name, count);
     }
 }

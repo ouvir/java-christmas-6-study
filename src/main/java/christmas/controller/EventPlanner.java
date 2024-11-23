@@ -24,11 +24,15 @@ public class EventPlanner {
     public void run() {
         outputView.printGreeting();
         int date = requestDate();
-//        2. 주문할 메뉴와 개수 입력 받기
         Orders orders = requestOrder();
-//                - 검증(format, not found, duplicate, total range)
-//        3. 주문 메뉴 출력하기
+        getInfo(date, orders);
+    }
+
+    private void getInfo(int date, Orders orders) {
+        outputView.printStartPreview();
+        outputView.printOrderMenu(orderService.getOrderMenu(orders));
 //        4. 할인 전 총 주문 금액 계산 및 출력
+        outputView.printOrderTotalPrice(orderService.getTotalPrice(orders));
 //        5. 증정 메뉴 출력
 //        6. 혜택 내역 출력
 //        7. 총 혜택 금액 출력

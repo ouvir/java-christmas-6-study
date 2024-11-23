@@ -26,7 +26,14 @@ public class MenuList {
         }
         throw new InputException(ORDER_FORMAT_ERROR);
     }
-
+    public int findMenuPrice(String menuName) {
+        for (Menu menu : menuList) {
+            if (menu.getName().equals(menuName)) {
+                return menu.getPrice();
+            }
+        }
+        return 0;
+    }
 
     private void addAppetizerMenu() {
         menuList.add(new Menu("양송이수프", 6_000, APPETIZER));

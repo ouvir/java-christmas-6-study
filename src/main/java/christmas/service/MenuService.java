@@ -10,4 +10,8 @@ public class MenuService {
     public String findMenu(Order order) throws InputException {
         return menuList.findMenuType(order.getName());
     }
+
+    public int getPrice(String name) {
+        return menuList.findMenuPrice(name);
+    }
 }

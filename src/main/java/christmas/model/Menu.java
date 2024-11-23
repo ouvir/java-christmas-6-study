@@ -18,4 +18,7 @@ public class Menu {
     public MenuType getMenuType() {
         return type;
     }
+    public int getPrice() {
+        return price;
+    }
 }

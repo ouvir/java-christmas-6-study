@@ -1,5 +1,6 @@
 package christmas.service;
 
+import christmas.dto.OrderDTO;
 import christmas.exception.InputException;
 import christmas.model.Order;
 import christmas.model.Orders;
@@ -89,4 +90,13 @@ public class OrderService {
     }
 
 
+    public List<OrderDTO> getOrderMenu(Orders orders) {
+        return orders.getAllMenu().stream().map(Order::convertToDTO).toList();
+    }
+
+    public int getTotalPrice(Orders orders) {
+        return orders.getAllMenu().stream()
+                .map(order -> menuService.getPrice(order.getName()) * order.getCount())
+                .reduce(0, Integer::sum);
+    }
 }
