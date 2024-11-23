@@ -80,4 +80,8 @@ public class OutputView {
     public void printExpectedPayment(int expectedPayment) {
         // 결제 예상 금액 출력
     }
+
+    public void printBadge(int eventDiscount, int promotionDiscount) {
+        // 뱃지 출력
+    }
 }
