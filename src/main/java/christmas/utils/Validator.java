@@ -32,4 +32,13 @@ public class Validator {
             throw new InputException(DATE_FORMAT_ERROR);
         }
     }
+
+    public static void validateOrder(String order) {
+        checkNullOrEmpty(order);
+        checkOrderFormat(order);
+    }
+
+    private static void checkOrderFormat(String order) {
+        // 시저샐러드-1, 티본스테이크-1 와 같은 형식만 확인하고 에러 발생 시키기
+    }
 }
