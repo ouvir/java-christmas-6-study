@@ -76,4 +76,8 @@ public class OutputView {
     public void printToTalEventPrice(int eventDiscount, int promotionDiscount) {
         // 총 할인 정보 출력
     }
+
+    public void printExpectedPayment(int expectedPayment) {
+        // 결제 예상 금액 출력
+    }
 }

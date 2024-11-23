@@ -59,8 +59,8 @@ public class EventPlanner {
         outputView.printEvent(eventDiscountInfo);
 //        7. 총 혜택 금액 출력
         outputView.printToTalEventPrice(eventDiscount, promotionDiscount);
-
 //        8. 할인 후 예상 결제 금액 출력
+        outputView.printExpectedPayment(totalPrice - eventDiscount);
 //        9. 12월 이벤트 배지 출력
     }
 
