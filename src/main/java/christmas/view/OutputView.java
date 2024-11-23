@@ -81,7 +81,7 @@ public class OutputView {
         // 결제 예상 금액 출력
     }
 
-    public void printBadge(int eventDiscount, int promotionDiscount) {
+    public void printBadge(int eventDiscount) {
         // 뱃지 출력
     }
 }
