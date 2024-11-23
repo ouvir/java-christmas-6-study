@@ -35,6 +35,15 @@ public class MenuList {
         return 0;
     }
 
+    public Menu findMenu(String menuName) {
+        for (Menu menu : menuList) {
+            if (menu.getName().equals(menuName)) {
+                return menu;
+            }
+        }
+        throw new InputException(ORDER_FORMAT_ERROR);
+    }
+
     private void addAppetizerMenu() {
         menuList.add(new Menu("양송이수프", 6_000, APPETIZER));
         menuList.add(new Menu("타파스", 5_500, APPETIZER));

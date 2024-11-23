@@ -1,24 +1,32 @@
 package christmas.controller;
 
-import christmas.model.Order;
-import christmas.model.Orders;
+import christmas.model.*;
 import christmas.service.OrderService;
+import christmas.service.PromotionEventService;
 import christmas.utils.Validator;
 import christmas.view.InputView;
 import christmas.view.OutputView;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
+import static christmas.model.MenuType.DRINK;
 
 public class EventPlanner {
     private final InputView inputView;
     private final OutputView outputView;
     private final OrderService orderService;
-
+    private final PromotionEventService promotionEventService;
     public EventPlanner(InputView inputView, OutputView outputView, OrderService orderService) {
         this.inputView = inputView;
         this.outputView = outputView;
         this.orderService = orderService;
+
+        List<PromotionEvent> promotionEvents = new ArrayList<>();
+        Menu promotion = new Menu("샴페인", 25_000, DRINK);
+        promotionEvents.add(new PromotionEvent(promotion, 1, 120_000));
+        this.promotionEventService = new PromotionEventService(promotionEvents);
     }
 
     public void run() {
@@ -31,9 +39,10 @@ public class EventPlanner {
     private void getInfo(int date, Orders orders) {
         outputView.printStartPreview();
         outputView.printOrderMenu(orderService.getOrderMenu(orders));
-//        4. 할인 전 총 주문 금액 계산 및 출력
-        outputView.printOrderTotalPrice(orderService.getTotalPrice(orders));
+        int totalPrice = orderService.getTotalPrice(orders);
+        outputView.printOrderTotalPrice(totalPrice);
 //        5. 증정 메뉴 출력
+        outputView.printPromotionMenu(promotionEventService.applyPromotionEvent(orders, totalPrice));
 //        6. 혜택 내역 출력
 //        7. 총 혜택 금액 출력
 //        8. 할인 후 예상 결제 금액 출력

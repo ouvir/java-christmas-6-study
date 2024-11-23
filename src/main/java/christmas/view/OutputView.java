@@ -1,6 +1,7 @@
 package christmas.view;
 
 import christmas.dto.OrderDTO;
+import christmas.dto.PromotionDTO;
 
 import java.util.List;
 
@@ -12,6 +13,9 @@ public class OutputView {
     private static final String MENU_FORMAT = "%s %d개";
     private static final String BEFORE_DISCOUNT_TOTAL_PRICE_MESSAGE = "<할인 전 총주문 금액>";
     private static final String PRICE_FORMAT = "%,d원";
+    private static final String PROMOTION_MENU_MESSAGE = "<증정 메뉴>";
+    private static final String NO_MESSAGE = "없음";
+
     public void printGreeting() {
         System.out.println(GREETING_MESSAGE);
     }
@@ -40,6 +44,27 @@ public class OutputView {
     public void printOrderTotalPrice(int totalPrice) {
         System.out.println(BEFORE_DISCOUNT_TOTAL_PRICE_MESSAGE);
         System.out.printf(PRICE_FORMAT + ENTER, totalPrice);
+        printEnter();
+    }
+
+    public void printPromotionMenu(List<PromotionDTO> promotionDTOS) {
+        System.out.println(PROMOTION_MENU_MESSAGE);
+        printPromotion(promotionDTOS);
+    }
+
+    private void printPromotion(List<PromotionDTO> promotionDTOS) {
+        if (promotionDTOS.isEmpty()) {
+            printNo();
+            return;
+        }
+        promotionDTOS.forEach(dto -> {
+            System.out.printf(MENU_FORMAT + ENTER, dto.getPromotionName(), dto.getPromotionCount());
+        });
+        printEnter();
+    }
+
+    private void printNo() {
+        System.out.println(NO_MESSAGE);
         printEnter();
     }
 }
