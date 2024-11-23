@@ -1,4 +1,4 @@
-package christmas.model;
+package christmas.model.order;
 
 import christmas.dto.OrderDTO;
 import christmas.utils.Parser;

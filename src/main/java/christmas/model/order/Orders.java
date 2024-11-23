@@ -1,10 +1,7 @@
-package christmas.model;
+package christmas.model.order;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-
-import static christmas.model.MenuType.*;
 
 public class Orders {
     private final List<Order> appetizers = new ArrayList<>();

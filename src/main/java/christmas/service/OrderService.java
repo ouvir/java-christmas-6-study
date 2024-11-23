@@ -2,8 +2,8 @@ package christmas.service;
 
 import christmas.dto.OrderDTO;
 import christmas.exception.InputException;
-import christmas.model.Order;
-import christmas.model.Orders;
+import christmas.model.order.Order;
+import christmas.model.order.Orders;
 import christmas.utils.Parser;
 
 import java.util.ArrayList;
@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Objects;
 
 import static christmas.exception.InputExceptionType.*;
-import static christmas.model.MenuType.*;
+import static christmas.model.menu.MenuType.*;
 import static christmas.utils.Constants.ORDER_MAX_COUNT;
 
 public class OrderService {

@@ -1,9 +1,9 @@
 package christmas.service;
 
 import christmas.dto.PromotionDTO;
-import christmas.model.Menu;
-import christmas.model.Orders;
-import christmas.model.PromotionEvent;
+import christmas.model.menu.Menu;
+import christmas.model.order.Orders;
+import christmas.model.promotionEvent.PromotionEvent;
 
 import java.util.ArrayList;
 import java.util.List;

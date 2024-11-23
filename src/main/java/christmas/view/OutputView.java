@@ -1,5 +1,6 @@
 package christmas.view;
 
+import christmas.dto.EventDTO;
 import christmas.dto.OrderDTO;
 import christmas.dto.PromotionDTO;
 
@@ -66,5 +67,13 @@ public class OutputView {
     private void printNo() {
         System.out.println(NO_MESSAGE);
         printEnter();
+    }
+
+    public void printEvent(List<EventDTO> eventDTOS) {
+        // 이벤트 할인 정보 출력
+    }
+
+    public void printToTalEventPrice(int eventDiscount, int promotionDiscount) {
+        // 총 할인 정보 출력
     }
 }

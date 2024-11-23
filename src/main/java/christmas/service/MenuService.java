@@ -1,8 +1,8 @@
 package christmas.service;
 
 import christmas.exception.InputException;
-import christmas.model.MenuList;
-import christmas.model.Order;
+import christmas.model.menu.MenuList;
+import christmas.model.order.Order;
 
 public class MenuService {
     private static final MenuList menuList = new MenuList();

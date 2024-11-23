@@ -1,4 +1,4 @@
-package christmas.model;
+package christmas.model.menu;
 
 import christmas.exception.InputException;
 
@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static christmas.exception.InputExceptionType.ORDER_FORMAT_ERROR;
-import static christmas.model.MenuType.*;
+import static christmas.model.menu.MenuType.*;
 
 public class MenuList {
     private final List<Menu> menuList = new ArrayList<>();

@@ -1,4 +1,6 @@
-package christmas.model;
+package christmas.model.promotionEvent;
+
+import christmas.model.menu.Menu;
 
 public class PromotionEvent {
     private final Menu promotion;

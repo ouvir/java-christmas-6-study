@@ -1,4 +1,4 @@
-package christmas.model;
+package christmas.model.menu;
 
 public enum MenuType {
     APPETIZER("애피타이저"),
